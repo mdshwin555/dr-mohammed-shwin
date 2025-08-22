@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>عيادة د. محمد شوين | من نحن</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="عيادة جراحة عامة - د. محمد شوين" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Cairo + Bootstrap RTL + الإضافات -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="plugins/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/slick-carousel/slick/slick-theme.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* خط Cairo على الكل */
+      body,
+      .btn,
+      .navbar,
+      .nav-link,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .brand-text,
+      .dropdown-item,
+      input,
+      textarea,
+      select {
+        font-family: "Cairo", Arial, sans-serif !important;
+      }
+      body {
+        text-align: right;
+      }
+      html[dir="rtl"] .ml-auto {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+      html[dir="rtl"] .mr-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+      }
+
+      .navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+      }
+      .navbar .navbar-brand img {
+        height: 36px;
+        width: auto;
+      }
+      .navbar .brand-text {
+        font-weight: 800;
+        font-size: 1.25rem;
+        margin-right: 0.5rem;
+        color: #1e2a3a;
+      }
+      .btn .icofont-simple-left {
+        margin-right: 0.5rem;
+      }
+      .divider {
+        width: 70px;
+        height: 3px;
+        background: #e12454;
+        border-radius: 3px;
+      }
+
+      /* ====== ماذا يقولون عنا — الصورة يمين، النص يسار + محاذاة يمين ====== */
+      .section.testimonial {
+        position: relative;
+        overflow: hidden;
+      }
+      .section.testimonial .container {
+        position: relative;
+        z-index: 1;
+      }
+      .section.testimonial .section-title,
+      .section.testimonial .testimonial-wrap,
+      .section.testimonial .testimonial-block {
+        direction: rtl;
+        text-align: right;
+      }
+
+      /* يمين: صورة بملء الارتفاع (الخلفية والصورة تُعرّف من style.css أو داخل العنصر) */
+      .testimonial-image {
+        height: 100%;
+      }
+      .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* محاذاة نقاط السلايدر لليمين */
+      .section.testimonial .slick-dots {
+        text-align: right !important;
+        right: 0 !important;
+        left: auto !important;
+      }
+
+      /* موبايل */
+      @media (max-width: 991.98px) {
+        .testimonial-image {
+          height: auto;
+          margin-top: 24px;
+        }
+        .testimonial-image img {
+          height: auto;
+        }
+      }
+
+      /* ====== فوتر ====== */
+      #site-footer .brand-text {
+        font-weight: 800;
+        margin-right: 8px;
+      }
+      #site-footer .footer-socials {
+        display: flex;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+      }
+      #site-footer .footer-socials li {
+        list-style: none;
+      }
+      #site-footer .footer-socials a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #8798a9;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s;
+        padding: 0 !important;
+        line-height: 0 !important;
+      }
+      #site-footer .footer-socials i {
+        font-size: 20px;
+        line-height: 1 !important;
+        display: block;
+        margin: 0;
+      }
+
+      #site-footer .ltr {
+        direction: ltr;
+        unicode-bidi: embed;
+        text-align: left;
+      }
+      #site-footer .doctor-col {
+        order: 1;
+      }
+      #site-footer .contact-col {
+        order: 2;
+      }
+      #site-footer .row > [class*="col-"] {
+        order: unset;
+      }
+
+      /* زر الاشتراك */
+      #site-footer .subscribe-form {
+        max-width: 720px;
+        margin-inline-start: auto;
+      }
+      #site-footer .subscribe {
+        position: relative !important;
+        display: block !important;
+      }
+      #site-footer .subscribe input.form-control {
+        width: 100% !important;
+        height: 48px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 0 14px;
+        padding-left: 128px;
+        direction: rtl;
+        text-align: right;
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
+      #site-footer .subscribe input.form-control:focus {
+        border-color: #274f9a;
+        box-shadow: 0 0 0 3px rgba(39, 79, 154, 0.15);
+        outline: 0;
+      }
+      #site-footer .subscribe .btn {
+        position: absolute !important;
+        left: 8px !important;
+        right: auto !important;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 38px;
+        border-radius: 999px;
+        padding: 0 12px;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 6px;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+      }
+      #site-footer .subscribe .btn span {
+        order: 2;
+      }
+      #site-footer .subscribe .btn i {
+        order: 1;
+        margin: 0;
+        line-height: 1;
+      }
+      #site-footer .subscribe .btn.btn-block {
+        width: auto !important;
+        display: inline-flex !important;
+      }
+      @media (max-width: 576px) {
+        #site-footer .subscribe input.form-control {
+          padding-left: 118px;
+        }
+        #site-footer .subscribe .btn {
+          left: 6px;
+        }
+      }
+      #site-footer .copyright {
+        color: #6b7a89;
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <!-- الهيدر -->
+    <header>
+      <div class="header-top-bar">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                <li class="list-inline-item">
+                  <a
+                    href="mailto:arrad48@gmail.com"
+                    class="d-inline-flex align-items-center"
+                    style="padding: 0"
+                  >
+                    <i class="icofont-email" style="margin-left: 0.35rem"></i
+                    ><span>arrad48@gmail.com</span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <i class="icofont-location-pin mr-2"></i>الرقة، سوريا
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+                <a href="tel:+963930691762">
+                  <span>اتصل الآن: </span>
+                  <span
+                    class="h4"
+                    dir="ltr"
+                    style="direction: ltr; unicode-bidi: bidi-override"
+                    >+963 930 691 762</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            aria-label="الانتقال للرئيسية"
+          >
+            <img src="images/favicon.png" alt="شعار العيادة" />
+            <span class="brand-text">د. محمد شوين</span>
+          </a>
+
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarmain"
+            aria-controls="navbarmain"
+            aria-expanded="false"
+            aria-label="تبديل القائمة"
+          >
+            <span class="icofont-navigation-menu"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarmain">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">الرئيسية</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.html">من نحن</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">الخدمات</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="blog-sidebar.html"
+                  id="dropdown05"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >المدونة <i class="icofont-thin-down"></i
+                ></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                  <li>
+                    <a class="dropdown-item" href="blog-sidebar.html"
+                      >مدونة مع شريط جانبي</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="blog-single.html"
+                      >مقالة منفردة</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">تواصل</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- عنوان الصفحة -->
+    <section class="page-title bg-1">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block text-center">
+              <span class="text-white">من نحن</span>
+              <h1 class="text-capitalize mb-5 text-lg text-white">
+                تعرف علينا
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- نص تعريفي -->
+    <section class="section about-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="title-color">رعاية شخصية لحياة أكثر صحة</h2>
+          </div>
+          <div class="col-lg-8">
+            <p>
+              في عيادة د. محمد شوين نقدّم رعاية آمنة وفعّالة في الجراحة العامة
+              مع شرح واضح قبل الإجراء ومتابعة دقيقة بعده.
+            </p>
+            <img src="images/about/sign.png" alt="توقيع" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- بطاقات -->
+    <section class="fetaure-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="about-block-item mb-5 mb-lg-0">
+              <img
+                src="images/about/about-1.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+              <h4 class="mt-3">رعاية الأطفال</h4>
+              <p>استشارات مناسبة وآمنة للأعمار الصغيرة.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="about-block-item mb-5 mb-lg-0">
+              <img
+                src="images/about/about-2.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+              <h4 class="mt-3">استشارات طبية</h4>
+              <p>تقييم دقيق وخطط علاج واضحة.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="about-block-item mb-5 mb-lg-0">
+              <img
+                src="images/about/about-3.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+              <h4 class="mt-3">تجهيزات حديثة</h4>
+              <p>تقنيات وإجراءات متقدمة.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="about-block-item">
+              <img
+                src="images/about/about-4.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+              <h4 class="mt-3">فريق مؤهّل</h4>
+              <p>نهج إنساني وخبرة طويلة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ماذا يقولون عنا — الصورة يمين، النص يسار + محاذاة يمين للنقاط -->
+    <section class="section testimonial">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <!-- يسار: العنوان + الشهادات (سلايدر) -->
+          <div class="col-lg-6 d-flex flex-column order-lg-1">
+            <div class="section-title">
+              <h2 class="mb-4">ماذا يقولون عنا</h2>
+              <div class="divider my-4"></div>
+              <p>آراء مرضانا هي الدافع الأول للاستمرار وتطوير خدماتنا.</p>
+            </div>
+
+            <div class="testimonial-wrap">
+              <div class="testimonial-block">
+                <div class="client-info">
+                  <h4>خدمة مذهلة!</h4>
+                  <span>جون ب.</span>
+                </div>
+                <p>مواعيد دقيقة واستجابة سريعة على الاستفسارات. شكرًا لكم.</p>
+                <i class="icofont-quote-right"></i>
+              </div>
+
+              <div class="testimonial-block">
+                <div class="client-info">
+                  <h4>أطباء خبراء!</h4>
+                  <span>سارة م.</span>
+                </div>
+                <p>
+                  فريق محترف وتعامل لطيف. التجربة كانت سلسة من البداية للنهاية.
+                </p>
+                <i class="icofont-quote-right"></i>
+              </div>
+
+              <div class="testimonial-block">
+                <div class="client-info">
+                  <h4>بيئة مريحة!</h4>
+                  <span>رامي ع.</span>
+                </div>
+                <p>النظافة والتنظيم والتعاون جعلت الزيارة مريحة جدًا.</p>
+                <i class="icofont-quote-right"></i>
+              </div>
+
+              <div class="testimonial-block">
+                <div class="client-info">
+                  <h4>دعم رائع!</h4>
+                  <span>خالد ر.</span>
+                </div>
+                <p>استجابة سريعة ومتابعة ممتازة بعد الإجراء.</p>
+                <i class="icofont-quote-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- يمين: الصورة فقط -->
+          <div class="col-lg-6 order-lg-2">
+            <div class="testimonial-image">
+              <!-- إذا عندك صورة خلفية معرفة بالـ CSS خليه فاضي.
+                   أو حط الصورة هنا كـ <img> لو بتحب:
+                   <img src="images/about/testimonial.jpg" alt="طاقم طبي">
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section gray-bg" id="site-footer">
+      <div class="container">
+        <div class="row">
+          <!-- يمين: الدكتور -->
+          <div class="col-lg-6 col-sm-6 doctor-col">
+            <div class="widget mb-5 mb-lg-0">
+              <div class="logo mb-4 d-flex align-items-center">
+                <img
+                  src="images/favicon.png"
+                  alt="شعار العيادة"
+                  class="img-fluid"
+                  style="height: 32px; width: auto"
+                />
+                <span class="brand-text">د. محمد شوين</span>
+              </div>
+              <p>
+                نسعى لتقديم رعاية آمنة وفعّالة لمرضانا في مجال الجراحة العامة.
+              </p>
+              <ul class="footer-socials mt-4">
+                <li>
+                  <a
+                    href="https://m.facebook.com/622815197589175/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                    ><i class="icofont-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/963930691762"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="WhatsApp"
+                    ><i class="icofont-whatsapp"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/dr.mohamdshwin"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram"
+                    ><i class="icofont-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- يسار: تواصل معنا -->
+          <div class="col-lg-6 col-md-6 col-sm-6 contact-col">
+            <div class="widget widget-contact mb-5 mb-lg-0">
+              <h4 class="text-capitalize mb-3">تواصل معنا</h4>
+              <div class="divider mb-4"></div>
+
+              <div class="footer-contact-block mb-3">
+                <div class="icon d-flex align-items-center">
+                  <i class="icofont-email mr-3"></i
+                  ><span class="h6 mb-0">الدعم متاح 24/7</span>
+                </div>
+                <h4 class="mt-2">
+                  <a href="mailto:arrad48@gmail.com">arrad48@gmail.com</a>
+                </h4>
+              </div>
+
+              <div class="footer-contact-block">
+                <div class="icon d-flex align-items-center">
+                  <i class="icofont-support mr-3"></i
+                  ><span class="h6 mb-0">السبت إلى الخميس : 09:00 - 16:00</span>
+                </div>
+                <h4 class="mt-2">
+                  <a class="ltr" href="tel:+963930691762">+963 930 691 762</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-btm py-4 mt-5">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+              <div class="copyright">
+                © <span id="year-copy"></span> د. محمد شوين — جميع الحقوق
+                محفوظة.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+                <form action="#" class="subscribe" dir="rtl">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="اكتب بريدك الإلكتروني"
+                    required
+                  />
+                  <button type="submit" class="btn btn-main-2 btn-round-full">
+                    <span>اشتراك</span><i class="icofont-simple-left"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-4">
+              <a
+                class="backtop scroll-top-to"
+                href="#top"
+                aria-label="Back to top"
+              >
+                <i class="icofont-long-arrow-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var y = document.getElementById("year-copy");
+          if (y) {
+            y.textContent = new Date().getFullYear();
+          }
+        })();
+      </script>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
